@@ -1,0 +1,27 @@
+<h3>Jugadores</h3>
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Equipo</th>
+            <th>Goles</th>
+            <th>PJ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (player of players; track player.name) {
+        <tr [ngClass]="{'titularity': player.titularity}">
+            <td>{{player.name}}</td>
+            <td>{{player.surname}}</td>
+            <td>{{player.team}}</td>
+            <td>{{player.goals}}</td>
+            <td>
+               <app-input-int [(value)]="player.PJ"></app-input-int>
+               <button class="btn btn-primary" (click)="addToGoalscorers(player)">Agregar</button>
+            </td>
+        </tr>
+        }
+        
+    </tbody>
+</table>

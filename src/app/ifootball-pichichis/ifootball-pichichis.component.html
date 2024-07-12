@@ -1,0 +1,8 @@
+<h3>Pichichis</h3>
+<ul>
+    @for (p of pichichis$ | async; track p.name) {
+    <li>
+        {{p.name}} {{p.surname}}, Goles: {{p.goals}}: Partidos Jugados: {{p.PJ}}
+    </li>
+    }
+</ul>
